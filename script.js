@@ -90,13 +90,27 @@ createMobileMenu();
 // Add current time indicator for hours
 const updateOpenStatus = () => {
     const now = new Date();
-    const hours = now.getHours();
-    const isOpen = hours >= 7 && hours < 19; // 7 AM to 7 PM
-    
+    const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+    const hour = now.getHours();
+    let open = false;
+    let openText = '';
+    if (day === 6 || day === 5) { // Saturday or Friday
+        open = hour >= 7 && hour < 19;
+        openText = '7:00 AM - 7:00 PM';
+    } else if (day === 0) { // Sunday
+        open = hour >= 7 && hour < 15;
+        openText = '7:00 AM - 3:00 PM';
+    } else { // Monday - Thursday
+        open = hour >= 7 && hour < 15;
+        openText = '7:00 AM - 3:00 PM';
+    }
     const hoursBadge = document.querySelector('.hours-badge');
-    if (hoursBadge && isOpen) {
+    if (hoursBadge && open) {
         hoursBadge.style.backgroundColor = 'rgba(107, 142, 35, 0.3)'; // Green tint
-        hoursBadge.innerHTML = '<span class="badge-icon">✅</span><span>Open Now | 7:00 AM - 7:00 PM</span>';
+        hoursBadge.innerHTML = `<span class="badge-icon">✅</span><span>Open Now | ${openText}</span>`;
+    } else if (hoursBadge) {
+        hoursBadge.style.backgroundColor = 'rgba(220, 53, 69, 0.2)'; // Red tint
+        hoursBadge.innerHTML = `<span class="badge-icon">⏰</span><span>Closed | ${openText}</span>`;
     }
 };
 

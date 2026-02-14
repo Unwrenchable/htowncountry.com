@@ -42,6 +42,10 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--light-cream);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'), linear-gradient(120deg, #fff8dc 0%, #f5e6ca 100%);
+    background-repeat: repeat;
+    background-size: auto, cover;
+    min-height: 100vh;
 }
 
 .container {
@@ -294,7 +298,37 @@ header {
 /* Menu Section */
 .menu-section {
     padding: var(--spacing-xl) 0;
-    background: linear-gradient(to bottom, var(--light-cream) 0%, white 100%);
+    background: linear-gradient(to bottom, #fff8dc 0%, #f5e6ca 100%);
+    box-shadow: 0 8px 32px 0 rgba(44,24,16,0.08);
+    border-radius: 18px;
+    margin-bottom: 2rem;
+/* Chalkboard-style menu welcome blurb */
+.menu-welcome {
+    background: #2C1810;
+    color: #FFF8DC;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(44,24,16,0.18);
+    border-left: 8px solid #8B4513;
+    border-right: 8px solid #8B4513;
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Merriweather', serif;
+    font-size: 1.15rem;
+    background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+    background-repeat: repeat;
+    position: relative;
+}
+.menu-welcome h3 {
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px #000a;
+}
+.menu-welcome p {
+    color: #FFF8DC;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
 }
 
 .menu-categories {
