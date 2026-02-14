@@ -95,6 +95,24 @@ header {
     font-size: 1.75rem;
     color: var(--primary-color);
     margin-bottom: 0.25rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    letter-spacing: 1px;
+    font-family: 'Merriweather', serif;
+}
+
+.site-logo {
+    height: 70px;
+    width: auto;
+    margin-right: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0002;
+    vertical-align: middle;
+    display: inline-block;
+    background: #fff;
+    border: 2px solid #D2691E;
+}
 }
 
 .tagline {
